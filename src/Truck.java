@@ -1,17 +1,18 @@
-public class Truck {
-
-    public String modelName;
-    public int wheelsCount;
-
-    public void updateTyre() {
-        System.out.println("Меняем покрышку");
-    }
-
-    public void checkEngine() {
-        System.out.println("Проверяем двигатель");
+public class Truck extends Car{
+    public Truck(String modelName, int wheelsCount) {
+        super(modelName, wheelsCount);
     }
 
     public void checkTrailer() {
-        System.out.println("Проверяем прицеп");
+        System.out.print("Проверяем прицеп ");
+    }
+
+    @Override
+    public void doService() {
+        System.out.println("Обслуживаем:" + this.getModelName());
+        updateTyre();
+        checkEngine();
+        checkTrailer();
+        System.out.println();
     }
 }
